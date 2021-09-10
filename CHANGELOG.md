@@ -4,9 +4,11 @@ Adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
-## 4.0.1 (TBD)
+## 5.0.0 (TBD)
 
-* TBD
+* All projection functionality (including proj4) moved to new dependency, projections-ios
+* Class prefixes changed from SFP to PROJ
+* SFPGeometryProjectionTransform renamed to SFPGeometryTransform with added static creations
 
 ## [4.0.0](https://github.com/ngageoint/simple-features-proj-ios/releases/tag/4.0.0) (03-01-2021)
 

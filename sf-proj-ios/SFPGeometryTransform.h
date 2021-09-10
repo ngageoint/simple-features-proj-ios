@@ -1,5 +1,5 @@
 //
-//  SFPGeometryProjectionTransform.h
+//  SFPGeometryTransform.h
 //  sf-proj-ios
 //
 //  Created by Brian Osborn on 1/18/16.
@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SFPProjectionTransform.h"
+#import "PROJProjectionTransform.h"
 #import "SFPoint.h"
 #import "SFLineString.h"
 #import "SFPolygon.h"
@@ -21,7 +21,17 @@
 #import "SFTriangle.h"
 #import "SFGeometryCollection.h"
 
-@interface SFPGeometryProjectionTransform : NSObject
+@interface SFPGeometryTransform : PROJProjectionTransform
+
+/**
+ *  Initialize
+ *
+ *  @param fromProjection from projection
+ *  @param toProjection to projection
+ *
+ *  @return new instance
+ */
+-(instancetype) initWithFromProjection: (PROJProjection *) fromProjection andToProjection: (PROJProjection *) toProjection;
 
 /**
  *  Initialize
@@ -30,7 +40,7 @@
  *
  *  @return new instance
  */
--(instancetype) initWithProjectionTransform: (SFPProjectionTransform *) transform;
+-(instancetype) initWithProjectionTransform: (PROJProjectionTransform *) transform;
 
 /**
  *  Transform the geometry

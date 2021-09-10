@@ -1,24 +1,29 @@
 //
-//  SFPGeometryProjectionTransform.m
+//  SFPGeometryTransform.m
 //  sf-proj-ios
 //
 //  Created by Brian Osborn on 1/18/16.
 //  Copyright © 2016 NGA. All rights reserved.
 //
 
-#import "SFPGeometryProjectionTransform.h"
-#import "SFPLocationCoordinate3D.h"
+#import "SFPGeometryTransform.h"
+#import "PROJLocationCoordinate3D.h"
 
-@interface SFPGeometryProjectionTransform()
+@interface SFPGeometryTransform()
 
-@property (nonatomic, strong) SFPProjectionTransform *transform;
+@property (nonatomic, strong) PROJProjectionTransform *transform;
 
 @end
 
-@implementation SFPGeometryProjectionTransform
+@implementation SFPGeometryTransform
 
--(instancetype) initWithProjectionTransform: (SFPProjectionTransform *) transform{
-    self = [super init];
+-(instancetype) initWithFromProjection: (PROJProjection *) fromProjection andToProjection: (PROJProjection *) toProjection{
+    self = [super initWithFromProjection:fromProjection andToProjection:toProjection];
+    return self;
+}
+
+-(instancetype) initWithProjectionTransform: (PROJProjectionTransform *) transform{
+    self = [super init]; // TODO
     if(self){
         self.transform = transform;
     }
@@ -80,12 +85,12 @@
 -(SFPoint *) transformPoint: (SFPoint *) point{
     
     CLLocationCoordinate2D fromCoord2d = CLLocationCoordinate2DMake([point.y doubleValue], [point.x doubleValue]);
-    SFPLocationCoordinate3D *fromCoord = [[SFPLocationCoordinate3D alloc] initWithCoordinate:fromCoord2d];
+    PROJLocationCoordinate3D *fromCoord = [[PROJLocationCoordinate3D alloc] initWithCoordinate:fromCoord2d];
     if(point.hasZ){
         [fromCoord setZ:point.z];
     }
     
-    SFPLocationCoordinate3D *toCoord = [self.transform transform3d:fromCoord];
+    PROJLocationCoordinate3D *toCoord = [self.transform transform3d:fromCoord];
     
     NSDecimalNumber *x = [[NSDecimalNumber alloc] initWithDouble:toCoord.coordinate.longitude];
     NSDecimalNumber *y = [[NSDecimalNumber alloc] initWithDouble:toCoord.coordinate.latitude];

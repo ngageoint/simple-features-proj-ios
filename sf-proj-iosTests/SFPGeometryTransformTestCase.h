@@ -1,5 +1,5 @@
 //
-//  SFPProjectionTransformTestCase.h
+//  SFPGeometryTransformTestCase.h
 //  sf-proj-iosTests
 //
 //  Created by Brian Osborn on 5/3/18.
@@ -8,6 +8,6 @@
 
 #import <XCTest/XCTest.h>
 
-@interface SFPProjectionTransformTestCase : XCTestCase
+@interface SFPGeometryTransformTestCase : XCTestCase
 
 @end

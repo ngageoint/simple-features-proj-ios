@@ -1,20 +1,20 @@
 //
-//  SFPProjectionTransformTestCase.m
+//  SFPGeometryTransformTestCase.m
 //  sf-proj-iosTests
 //
 //  Created by Brian Osborn on 5/3/18.
 //  Copyright © 2018 NGA. All rights reserved.
 //
 
-#import "SFPProjectionTransformTestCase.h"
+#import "SFPGeometryTransformTestCase.h"
 #import "SFPolygon.h"
-#import "SFPProjectionConstants.h"
-#import "SFPProjection.h"
-#import "SFPProjectionFactory.h"
-#import "SFPProjectionTransform.h"
+#import "PROJProjectionConstants.h"
+#import "PROJProjection.h"
+#import "PROJProjectionFactory.h"
+#import "PROJProjectionTransform.h"
 #import "SFPTestUtils.h"
 
-@implementation SFPProjectionTransformTestCase
+@implementation SFPGeometryTransformTestCase
 
 -(void) testProjectionTransform{
     
@@ -34,10 +34,10 @@
     [wgs84Ring addPoint:[[SFPoint alloc] initWithXValue:-PROJ_WGS84_HALF_WORLD_LON_WIDTH andYValue:PROJ_WEB_MERCATOR_MAX_LAT_RANGE]];
     [wgs84Polygon addRing:wgs84Ring];
 
-    SFPProjection *webMercator = [SFPProjectionFactory projectionWithAuthority:PROJ_AUTHORITY_EPSG andIntCode:PROJ_EPSG_WEB_MERCATOR];
-    SFPProjection *wgs84 = [SFPProjectionFactory projectionWithAuthority:PROJ_AUTHORITY_EPSG andIntCode:PROJ_EPSG_WORLD_GEODETIC_SYSTEM];
+    PROJProjection *webMercator = [PROJProjectionFactory projectionWithAuthority:PROJ_AUTHORITY_EPSG andIntCode:PROJ_EPSG_WEB_MERCATOR];
+    PROJProjection *wgs84 = [PROJProjectionFactory projectionWithAuthority:PROJ_AUTHORITY_EPSG andIntCode:PROJ_EPSG_WORLD_GEODETIC_SYSTEM];
 
-    SFPProjectionTransform *transformWebMercatorToWgs84 = [[SFPProjectionTransform alloc] initWithFromProjection:webMercator andToProjection:wgs84];
+    PROJProjectionTransform *transformWebMercatorToWgs84 = [[PROJProjectionTransform alloc] initWithFromProjection:webMercator andToProjection:wgs84];
     
     SFGeometry *transformedGeometry = [transformWebMercatorToWgs84 transformWithGeometry:polygon];
     
@@ -46,7 +46,7 @@
     
     [SFPTestUtils assertEqualWithValue:wgs84Polygon andValue2:transformedGeometry];
     
-    SFPProjectionTransform *transformWgs84ToWebMercator = [[SFPProjectionTransform alloc] initWithFromProjection:wgs84 andToProjection:webMercator];
+    PROJProjectionTransform *transformWgs84ToWebMercator = [[PROJProjectionTransform alloc] initWithFromProjection:wgs84 andToProjection:webMercator];
 
     SFGeometry *transformedGeometry2 = [transformWgs84ToWebMercator transformWithGeometry:transformedGeometry];
     
