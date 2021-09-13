@@ -8,9 +8,9 @@
 
 #import "SFPReadmeTest.h"
 #import "SFPTestUtils.h"
-#import "SFPProjectionFactory.h"
-#import "SFPProjectionTransform.h"
-#import "SFPProjectionConstants.h"
+#import "SFPGeometryTransform.h"
+#import "PROJProjectionFactory.h"
+#import "PROJProjectionConstants.h"
 
 @implementation SFPReadmeTest
 
@@ -39,18 +39,18 @@
     
     // SFGeometry *geometry = ...
 
-    SFPProjection *projection1 =
-        [SFPProjectionFactory projectionWithAuthority:PROJ_AUTHORITY_EPSG
+    PROJProjection *projection1 =
+        [PROJProjectionFactory projectionWithAuthority:PROJ_AUTHORITY_EPSG
         andIntCode:PROJ_EPSG_WEB_MERCATOR];
-    SFPProjection *projection2 =
-        [SFPProjectionFactory projectionWithAuthority:PROJ_AUTHORITY_EPSG
+    PROJProjection *projection2 =
+        [PROJProjectionFactory projectionWithAuthority:PROJ_AUTHORITY_EPSG
         andIntCode:PROJ_EPSG_WORLD_GEODETIC_SYSTEM];
     
-    SFPProjectionTransform *transform =
-        [[SFPProjectionTransform alloc] initWithFromProjection:projection1
+    SFPGeometryTransform *transform =
+        [SFPGeometryTransform transformFromProjection:projection1
         andToProjection:projection2];
 
-    SFGeometry *transformed = [transform transformWithGeometry:geometry];
+    SFGeometry *transformed = [transform transformGeometry:geometry];
 
     return transformed;
 }

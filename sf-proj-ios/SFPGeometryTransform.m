@@ -9,25 +9,92 @@
 #import "SFPGeometryTransform.h"
 #import "PROJLocationCoordinate3D.h"
 
-@interface SFPGeometryTransform()
-
-@property (nonatomic, strong) PROJProjectionTransform *transform;
-
-@end
-
 @implementation SFPGeometryTransform
+
++(SFPGeometryTransform *) transformFromProjection: (PROJProjection *) fromProjection andToProjection: (PROJProjection *) toProjection{
+    return [[SFPGeometryTransform alloc] initWithFromProjection:fromProjection andToProjection:toProjection];
+}
+
++(SFPGeometryTransform *) transformFromEpsg: (int) fromEpsg andToEpsg: (int) toEpsg{
+    return [[SFPGeometryTransform alloc] initWithFromEpsg:fromEpsg andToEpsg:toEpsg];
+}
+
++(SFPGeometryTransform *) transformFromAuthority: (NSString *) fromAuthority andFromIntCode: (int) fromCode andToAuthority: (NSString *) toAuthority andToIntCode: (int) toCode{
+    return [[SFPGeometryTransform alloc] initWithFromAuthority:fromAuthority andFromIntCode:fromCode andToAuthority:toAuthority andToIntCode:toCode];
+}
+
++(SFPGeometryTransform *) transformFromAuthority: (NSString *) fromAuthority andFromCode: (NSString *) fromCode andToAuthority: (NSString *) toAuthority andToCode: (NSString *) toCode{
+    return [[SFPGeometryTransform alloc] initWithFromAuthority:fromAuthority andFromCode:fromCode andToAuthority:toAuthority andToCode:toCode];
+}
+
++(SFPGeometryTransform *) transformFromProjection: (PROJProjection *) fromProjection andToEpsg: (int) toEpsg{
+    return [[SFPGeometryTransform alloc] initWithFromProjection:fromProjection andToEpsg:toEpsg];
+}
+
++(SFPGeometryTransform *) transformFromProjection: (PROJProjection *) fromProjection andToAuthority: (NSString *) toAuthority andToCode: (NSString *) toCode{
+    return [[SFPGeometryTransform alloc] initWithFromProjection:fromProjection andToAuthority:toAuthority andToCode:toCode];
+}
+
++(SFPGeometryTransform *) transformFromEpsg: (int) fromEpsg andToProjection: (PROJProjection *) toProjection{
+    return [[SFPGeometryTransform alloc] initWithFromEpsg:fromEpsg andToProjection:toProjection];
+}
+
++(SFPGeometryTransform *) transformFromAuthority: (NSString *) fromAuthority andFromCode: (NSString *) fromCode andToProjection: (PROJProjection *) toProjection{
+    return [[SFPGeometryTransform alloc] initWithFromAuthority:fromAuthority andFromCode:fromCode andToProjection:toProjection];
+}
 
 -(instancetype) initWithFromProjection: (PROJProjection *) fromProjection andToProjection: (PROJProjection *) toProjection{
     self = [super initWithFromProjection:fromProjection andToProjection:toProjection];
     return self;
 }
 
--(instancetype) initWithProjectionTransform: (PROJProjectionTransform *) transform{
-    self = [super init]; // TODO
-    if(self){
-        self.transform = transform;
-    }
+-(instancetype) initWithFromEpsg: (int) fromEpsg andToEpsg: (int) toEpsg{
+    self = [super initWithFromEpsg:fromEpsg andToEpsg:toEpsg];
     return self;
+}
+
+-(instancetype) initWithFromAuthority: (NSString *) fromAuthority andFromIntCode: (int) fromCode andToAuthority: (NSString *) toAuthority andToIntCode: (int) toCode{
+    self = [super initWithFromAuthority:fromAuthority andFromIntCode:fromCode andToAuthority:toAuthority andToIntCode:toCode];
+    return self;
+}
+
+-(instancetype) initWithFromAuthority: (NSString *) fromAuthority andFromCode: (NSString *) fromCode andToAuthority: (NSString *) toAuthority andToCode: (NSString *) toCode{
+    self = [super initWithFromAuthority:fromAuthority andFromCode:fromCode andToAuthority:toAuthority andToCode:toCode];
+    return self;
+}
+
+-(instancetype) initWithFromProjection: (PROJProjection *) fromProjection andToEpsg: (int) toEpsg{
+    self = [super initWithFromProjection:fromProjection andToEpsg:toEpsg];
+    return self;
+}
+
+-(instancetype) initWithFromProjection: (PROJProjection *) fromProjection andToAuthority: (NSString *) toAuthority andToCode: (NSString *) toCode{
+    self = [super initWithFromProjection:fromProjection andToAuthority:toAuthority andToCode:toCode];
+    return self;
+}
+
+-(instancetype) initWithFromEpsg: (int) fromEpsg andToProjection: (PROJProjection *) toProjection{
+    self = [super initWithFromEpsg:fromEpsg andToProjection:toProjection];
+    return self;
+}
+
+-(instancetype) initWithFromAuthority: (NSString *) fromAuthority andFromCode: (NSString *) fromCode andToProjection: (PROJProjection *) toProjection{
+    self = [super initWithFromAuthority:fromAuthority andFromCode:fromCode andToProjection:toProjection];
+    return self;
+}
+
+-(instancetype) initWithProjectionTransform: (PROJProjectionTransform *) transform{
+    self = [super initWithProjectionTransform:transform];
+    return self;
+}
+
+-(SFGeometryEnvelope *) transformGeometryEnvelope: (SFGeometryEnvelope *) envelope{
+    
+    NSArray<NSDecimalNumber *> *bounds = [self transformMinX:[envelope.minX doubleValue] andMinY:[envelope.minY doubleValue] andMaxX:[envelope.maxX doubleValue] andMaxY:[envelope.maxY doubleValue]];
+    
+    SFGeometryEnvelope *projectedEnvelope = [[SFGeometryEnvelope alloc] initWithMinX:[bounds objectAtIndex:0] andMinY:[bounds objectAtIndex:1] andMaxX:[bounds objectAtIndex:2] andMaxY:[bounds objectAtIndex:3]];
+    
+    return projectedEnvelope;
 }
 
 -(SFGeometry *) transformGeometry: (SFGeometry *) geometry{
@@ -90,7 +157,7 @@
         [fromCoord setZ:point.z];
     }
     
-    PROJLocationCoordinate3D *toCoord = [self.transform transform3d:fromCoord];
+    PROJLocationCoordinate3D *toCoord = [self transform3d:fromCoord];
     
     NSDecimalNumber *x = [[NSDecimalNumber alloc] initWithDouble:toCoord.coordinate.longitude];
     NSDecimalNumber *y = [[NSDecimalNumber alloc] initWithDouble:toCoord.coordinate.latitude];
@@ -101,6 +168,18 @@
     }
     if(point.hasM){
         [to setM:point.m];
+    }
+    
+    return to;
+}
+
+-(NSArray<SFPoint *> *) transformPoints: (NSArray<SFPoint *> *) from{
+    
+    NSMutableArray<SFPoint *> *to = [NSMutableArray array];
+    
+    for(SFPoint *fromPoint in from){
+        SFPoint * toPoint = [self transformPoint:fromPoint];
+        [to addObject:toPoint];
     }
     
     return to;
@@ -258,6 +337,10 @@
     }
 
     return to;
+}
+
+-(SFPGeometryTransform *) inverseTransformation{
+    return [SFPGeometryTransform transformFromProjection:self.toProjection andToProjection:self.fromProjection];
 }
 
 @end

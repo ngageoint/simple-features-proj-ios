@@ -38,12 +38,12 @@ class SFPSwiftReadmeTest: XCTestCase{
     
         // var geometry: SFGeometry = ...
 
-        let projection1: SFPProjection = SFPProjectionFactory.projection(withAuthority: PROJ_AUTHORITY_EPSG, andIntCode: PROJ_EPSG_WEB_MERCATOR)
-        let projection2: SFPProjection = SFPProjectionFactory.projection(withAuthority: PROJ_AUTHORITY_EPSG, andIntCode: PROJ_EPSG_WORLD_GEODETIC_SYSTEM)
+        let projection1: PROJProjection = PROJProjectionFactory.projection(withAuthority: PROJ_AUTHORITY_EPSG, andIntCode: PROJ_EPSG_WEB_MERCATOR)
+        let projection2: PROJProjection = PROJProjectionFactory.projection(withAuthority: PROJ_AUTHORITY_EPSG, andIntCode: PROJ_EPSG_WORLD_GEODETIC_SYSTEM)
         
-        let transform: SFPProjectionTransform = SFPProjectionTransform(from: projection1, andTo: projection2)
+        let transform: SFPGeometryTransform = SFPGeometryTransform(from: projection1, andTo: projection2)
         
-        let transformed: SFGeometry = transform.transform(with: geometry)
+        let transformed: SFGeometry = transform.transform(geometry)
 
         return transformed
     }

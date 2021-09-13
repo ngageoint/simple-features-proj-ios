@@ -11,7 +11,7 @@
 #import "PROJProjectionConstants.h"
 #import "PROJProjection.h"
 #import "PROJProjectionFactory.h"
-#import "PROJProjectionTransform.h"
+#import "SFPGeometryTransform.h"
 #import "SFPTestUtils.h"
 
 @implementation SFPGeometryTransformTestCase
@@ -37,18 +37,18 @@
     PROJProjection *webMercator = [PROJProjectionFactory projectionWithAuthority:PROJ_AUTHORITY_EPSG andIntCode:PROJ_EPSG_WEB_MERCATOR];
     PROJProjection *wgs84 = [PROJProjectionFactory projectionWithAuthority:PROJ_AUTHORITY_EPSG andIntCode:PROJ_EPSG_WORLD_GEODETIC_SYSTEM];
 
-    PROJProjectionTransform *transformWebMercatorToWgs84 = [[PROJProjectionTransform alloc] initWithFromProjection:webMercator andToProjection:wgs84];
+    SFPGeometryTransform *transformWebMercatorToWgs84 = [SFPGeometryTransform transformFromProjection:webMercator andToProjection:wgs84];
     
-    SFGeometry *transformedGeometry = [transformWebMercatorToWgs84 transformWithGeometry:polygon];
+    SFGeometry *transformedGeometry = [transformWebMercatorToWgs84 transformGeometry:polygon];
     
     [SFPTestUtils assertNotNil:transformedGeometry];
     [SFPTestUtils assertTrue:[transformedGeometry isKindOfClass:[SFPolygon class]]];
     
     [SFPTestUtils assertEqualWithValue:wgs84Polygon andValue2:transformedGeometry];
     
-    PROJProjectionTransform *transformWgs84ToWebMercator = [[PROJProjectionTransform alloc] initWithFromProjection:wgs84 andToProjection:webMercator];
+    SFPGeometryTransform *transformWgs84ToWebMercator = [SFPGeometryTransform transformFromProjection:wgs84 andToProjection:webMercator];
 
-    SFGeometry *transformedGeometry2 = [transformWgs84ToWebMercator transformWithGeometry:transformedGeometry];
+    SFGeometry *transformedGeometry2 = [transformWgs84ToWebMercator transformGeometry:transformedGeometry];
     
     [SFPTestUtils assertNotNil:transformedGeometry2];
     [SFPTestUtils assertTrue:[transformedGeometry2 isKindOfClass:[SFPolygon class]]];
