@@ -23,18 +23,18 @@ View the latest [Appledoc](http://ngageoint.github.io/simple-features-proj-ios/d
 
 // SFGeometry *geometry = ...
 
-SFPProjection *projection1 =
-    [SFPProjectionFactory projectionWithAuthority:PROJ_AUTHORITY_EPSG
+PROJProjection *projection1 =
+    [PROJProjectionFactory projectionWithAuthority:PROJ_AUTHORITY_EPSG
     andIntCode:PROJ_EPSG_WEB_MERCATOR];
-SFPProjection *projection2 =
-    [SFPProjectionFactory projectionWithAuthority:PROJ_AUTHORITY_EPSG
+PROJProjection *projection2 =
+    [PROJProjectionFactory projectionWithAuthority:PROJ_AUTHORITY_EPSG
     andIntCode:PROJ_EPSG_WORLD_GEODETIC_SYSTEM];
 
-SFPProjectionTransform *transform =
-    [[SFPProjectionTransform alloc] initWithFromProjection:projection1
+SFPGeometryTransform *transform =
+    [SFPGeometryTransform transformFromProjection:projection1
     andToProjection:projection2];
 
-SFGeometry *transformed = [transform transformWithGeometry:geometry];
+SFGeometry *transformed = [transform transformGeometry:geometry];
 
 ```
 
@@ -61,12 +61,12 @@ Include this repository by specifying it in a Podfile using a supported option.
 
 Pull from [CocoaPods](https://cocoapods.org/pods/sf-proj-ios):
 
-    pod 'sf-proj-ios', '~> 4.0.0'
+    pod 'sf-proj-ios', '~> 5.0.0'
 
 Pull from GitHub:
 
     pod 'sf-proj-ios', :git => 'https://github.com/ngageoint/simple-features-proj-ios.git', :branch => 'master'
-    pod 'sf-proj-ios', :git => 'https://github.com/ngageoint/simple-features-proj-ios.git', :tag => '4.0.0'
+    pod 'sf-proj-ios', :git => 'https://github.com/ngageoint/simple-features-proj-ios.git', :tag => '5.0.0'
 
 Include as local project:
 
@@ -84,16 +84,16 @@ To use from Swift, import the sf-proj-ios bridging header from the Swift project
 
 // var geometry: SFGeometry = ...
 
-let projection1: SFPProjection = SFPProjectionFactory.projection(withAuthority: PROJ_AUTHORITY_EPSG, andIntCode: PROJ_EPSG_WEB_MERCATOR)
-let projection2: SFPProjection = SFPProjectionFactory.projection(withAuthority: PROJ_AUTHORITY_EPSG, andIntCode: PROJ_EPSG_WORLD_GEODETIC_SYSTEM)
+let projection1: PROJProjection = PROJProjectionFactory.projection(withAuthority: PROJ_AUTHORITY_EPSG, andIntCode: PROJ_EPSG_WEB_MERCATOR)
+let projection2: PROJProjection = PROJProjectionFactory.projection(withAuthority: PROJ_AUTHORITY_EPSG, andIntCode: PROJ_EPSG_WORLD_GEODETIC_SYSTEM)
 
-let transform: SFPProjectionTransform = SFPProjectionTransform(from: projection1, andTo: projection2)
+let transform: SFPGeometryTransform = SFPGeometryTransform(from: projection1, andTo: projection2)
 
-let transformed: SFGeometry = transform.transform(with: geometry)
+let transformed: SFGeometry = transform.transform(geometry)
 
 ```
 
 ### Remote Dependencies ###
 
 * [Simple Features](https://github.com/ngageoint/simple-features-ios) (The MIT License (MIT)) - Simple Features Lib
-* [proj4](https://trac.osgeo.org/proj/) (The MIT License (MIT)) - Cartographic projection software
+* [Projections](https://github.com/ngageoint/projections-ios) (The MIT License (MIT)) - Projections Lib
