@@ -14,8 +14,6 @@ Pod::Spec.new do |s|
 
   s.source_files = 'sf-proj-ios/**/*.{h,m}'
 
-  s.exclude_files = 'sf-proj-ios/**/Info.plist'
-  s.resource_bundle = { 'sf-proj-ios' => ['sf-proj-ios/**/*.plist'] }
   s.frameworks = 'Foundation'
 
   s.dependency 'sf-ios', '~> 4.0.0'

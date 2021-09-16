@@ -10,7 +10,7 @@
 		041F18E124CB2291001311E4 /* SFPReadmeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 041F18E024CB2291001311E4 /* SFPReadmeTest.m */; };
 		041F18E424CB3762001311E4 /* SFPSwiftReadmeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F18E324CB3762001311E4 /* SFPSwiftReadmeTest.swift */; };
 		042FC6571B963FE500549A4B /* sf_proj_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042FC64B1B963FE500549A4B /* sf_proj_ios.framework */; };
-		042FC6AF1B96421E00549A4B /* (null) in Headers */ = {isa = PBXBuildFile; };
+		042FC6AF1B96421E00549A4B /* BuildFile in Headers */ = {isa = PBXBuildFile; };
 		042FC6D31B96421E00549A4B /* sf-proj-ios-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 042FC69E1B96421E00549A4B /* sf-proj-ios-Prefix.pch */; };
 		042FC6D51B96453E00549A4B /* sf_proj_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 042FC6D41B96453E00549A4B /* sf_proj_ios.h */; };
 		0472B51B1C03590500496B87 /* sf-proj-ios-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 0472B51A1C03590500496B87 /* sf-proj-ios-Bridging-Header.h */; };
@@ -172,7 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0472B51B1C03590500496B87 /* sf-proj-ios-Bridging-Header.h in Headers */,
-				042FC6AF1B96421E00549A4B /* (null) in Headers */,
+				042FC6AF1B96421E00549A4B /* BuildFile in Headers */,
 				04F4560E209A47C800FC299E /* SFPGeometryTransform.h in Headers */,
 				042FC6D51B96453E00549A4B /* sf_proj_ios.h in Headers */,
 				042FC6D31B96421E00549A4B /* sf-proj-ios-Prefix.pch in Headers */,
@@ -319,12 +319,10 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-sf-proj-ios/Pods-sf-proj-ios-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/crs-ios/crs-ios.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/proj-ios/proj-ios.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/crs-ios.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/proj-ios.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
