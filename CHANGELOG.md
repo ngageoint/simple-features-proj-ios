@@ -4,6 +4,10 @@ Adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
+## 5.0.1 (TBD)
+
+* TBD
+
 ## [5.0.0](https://github.com/ngageoint/simple-features-proj-ios/releases/tag/5.0.0) (09-16-2021)
 
 * All projection functionality (including proj4) moved to new dependency, projections-ios
