@@ -4,7 +4,7 @@ Adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
-## 5.0.3 (TBD)
+## [5.0.3](https://github.com/ngageoint/simple-features-proj-ios/releases/tag/5.0.3) (05-04-2022)
 
 * proj-ios version 1.0.3
 * Non projected ETRS89 GeoDatum fix (EPSG:4258)
