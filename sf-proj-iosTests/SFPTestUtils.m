@@ -109,20 +109,20 @@
     double x = [self randomDoubleLessThan:180.0] * ([self randomDouble] < .5 ? 1 : -1);
     double y = [self randomDoubleLessThan:90.0] * ([self randomDouble] < .5 ? 1 : -1);
     
-    NSDecimalNumber * xNumber = [self roundDouble:x];
-    NSDecimalNumber * yNumber = [self roundDouble:y];
+    NSDecimalNumber *xNumber = [self roundDouble:x];
+    NSDecimalNumber *yNumber = [self roundDouble:y];
     
-    SFPoint * point = [[SFPoint alloc] initWithHasZ:hasZ andHasM:hasM andX:xNumber andY:yNumber];
+    SFPoint *point = [SFPoint pointWithHasZ:hasZ andHasM:hasM andX:xNumber andY:yNumber];
     
     if(hasZ){
         double z = [self randomDoubleLessThan:1000.0];
-        NSDecimalNumber * zNumber = [self roundDouble:z];
+        NSDecimalNumber *zNumber = [self roundDouble:z];
         [point setZ:zNumber];
     }
     
     if(hasM){
         double m = [self randomDoubleLessThan:1000.0];
-        NSDecimalNumber * mNumber = [self roundDouble:m];
+        NSDecimalNumber *mNumber = [self roundDouble:m];
         [point setM:mNumber];
     }
        
@@ -131,7 +131,7 @@
 
 +(SFLineString *) createLineStringWithHasZ: (BOOL) hasZ andHasM: (BOOL) hasM andRing: (BOOL) ring{
     
-    SFLineString * lineString = [[SFLineString alloc] initWithHasZ:hasZ andHasM:hasM];
+    SFLineString *lineString = [SFLineString lineStringWithHasZ:hasZ andHasM:hasM];
     
     int numPoints = 2 + [self randomIntLessThan:9];
     
@@ -148,7 +148,7 @@
 
 +(SFPolygon *) createPolygonWithHasZ: (BOOL) hasZ andHasM: (BOOL) hasM{
     
-    SFPolygon * polygon = [[SFPolygon alloc] initWithHasZ:hasZ andHasM:hasM];
+    SFPolygon *polygon = [SFPolygon polygonWithHasZ:hasZ andHasM:hasM];
     
     int numLineStrings = 1 + [self randomIntLessThan:5];
     

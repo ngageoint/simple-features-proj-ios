@@ -18,20 +18,20 @@
 
 -(void) testProjectionTransform{
     
-    SFPolygon *polygon = [[SFPolygon alloc] init];
-    SFLineString *ring = [[SFLineString alloc] init];
-    [ring addPoint:[[SFPoint alloc] initWithXValue:-PROJ_WEB_MERCATOR_HALF_WORLD_WIDTH andYValue:-PROJ_WEB_MERCATOR_HALF_WORLD_WIDTH]];
-    [ring addPoint:[[SFPoint alloc] initWithXValue:PROJ_WEB_MERCATOR_HALF_WORLD_WIDTH andYValue:-PROJ_WEB_MERCATOR_HALF_WORLD_WIDTH]];
-    [ring addPoint:[[SFPoint alloc] initWithXValue:PROJ_WEB_MERCATOR_HALF_WORLD_WIDTH andYValue:PROJ_WEB_MERCATOR_HALF_WORLD_WIDTH]];
-    [ring addPoint:[[SFPoint alloc] initWithXValue:-PROJ_WEB_MERCATOR_HALF_WORLD_WIDTH andYValue:PROJ_WEB_MERCATOR_HALF_WORLD_WIDTH]];
+    SFPolygon *polygon = [SFPolygon polygon];
+    SFLineString *ring = [SFLineString lineString];
+    [ring addPoint:[SFPoint pointWithXValue:-PROJ_WEB_MERCATOR_HALF_WORLD_WIDTH andYValue:-PROJ_WEB_MERCATOR_HALF_WORLD_WIDTH]];
+    [ring addPoint:[SFPoint pointWithXValue:PROJ_WEB_MERCATOR_HALF_WORLD_WIDTH andYValue:-PROJ_WEB_MERCATOR_HALF_WORLD_WIDTH]];
+    [ring addPoint:[SFPoint pointWithXValue:PROJ_WEB_MERCATOR_HALF_WORLD_WIDTH andYValue:PROJ_WEB_MERCATOR_HALF_WORLD_WIDTH]];
+    [ring addPoint:[SFPoint pointWithXValue:-PROJ_WEB_MERCATOR_HALF_WORLD_WIDTH andYValue:PROJ_WEB_MERCATOR_HALF_WORLD_WIDTH]];
     [polygon addRing:ring];
     
-    SFPolygon *wgs84Polygon = [[SFPolygon alloc] init];
-    SFLineString *wgs84Ring = [[SFLineString alloc] init];
-    [wgs84Ring addPoint:[[SFPoint alloc] initWithXValue:-PROJ_WGS84_HALF_WORLD_LON_WIDTH andYValue:-PROJ_WEB_MERCATOR_MAX_LAT_RANGE]];
-    [wgs84Ring addPoint:[[SFPoint alloc] initWithXValue:PROJ_WGS84_HALF_WORLD_LON_WIDTH andYValue:-PROJ_WEB_MERCATOR_MAX_LAT_RANGE]];
-    [wgs84Ring addPoint:[[SFPoint alloc] initWithXValue:PROJ_WGS84_HALF_WORLD_LON_WIDTH andYValue:PROJ_WEB_MERCATOR_MAX_LAT_RANGE]];
-    [wgs84Ring addPoint:[[SFPoint alloc] initWithXValue:-PROJ_WGS84_HALF_WORLD_LON_WIDTH andYValue:PROJ_WEB_MERCATOR_MAX_LAT_RANGE]];
+    SFPolygon *wgs84Polygon = [SFPolygon polygon];
+    SFLineString *wgs84Ring = [SFLineString lineString];
+    [wgs84Ring addPoint:[SFPoint pointWithXValue:-PROJ_WGS84_HALF_WORLD_LON_WIDTH andYValue:-PROJ_WEB_MERCATOR_MAX_LAT_RANGE]];
+    [wgs84Ring addPoint:[SFPoint pointWithXValue:PROJ_WGS84_HALF_WORLD_LON_WIDTH andYValue:-PROJ_WEB_MERCATOR_MAX_LAT_RANGE]];
+    [wgs84Ring addPoint:[SFPoint pointWithXValue:PROJ_WGS84_HALF_WORLD_LON_WIDTH andYValue:PROJ_WEB_MERCATOR_MAX_LAT_RANGE]];
+    [wgs84Ring addPoint:[SFPoint pointWithXValue:-PROJ_WGS84_HALF_WORLD_LON_WIDTH andYValue:PROJ_WEB_MERCATOR_MAX_LAT_RANGE]];
     [wgs84Polygon addRing:wgs84Ring];
 
     PROJProjection *webMercator = [PROJProjectionFactory projectionWithAuthority:PROJ_AUTHORITY_EPSG andIntCode:PROJ_EPSG_WEB_MERCATOR];

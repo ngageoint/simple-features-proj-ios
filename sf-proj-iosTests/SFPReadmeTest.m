@@ -19,7 +19,7 @@
  */
 -(void) testTransform{
     
-    SFGeometry *transformed = [self transformTester: [[SFPoint alloc] initWithXValue:111319.49079327357 andYValue:111325.14286638486]];
+    SFGeometry *transformed = [self transformTester: [SFPoint pointWithXValue:111319.49079327357 andYValue:111325.14286638486]];
     
     [SFPTestUtils assertEqualIntWithValue:SF_POINT andValue2:transformed.geometryType];
     SFPoint *point = (SFPoint *) transformed;

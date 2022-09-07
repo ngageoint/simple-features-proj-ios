@@ -4,9 +4,9 @@ Adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
-## 5.0.4 (TBD)
+## [5.1.0](https://github.com/ngageoint/simple-features-proj-ios/releases/tag/5.1.0) (09-07-2022)
 
-* TBD
+* sf-ios 4.1.0
 
 ## [5.0.3](https://github.com/ngageoint/simple-features-proj-ios/releases/tag/5.0.3) (05-04-2022)
 
