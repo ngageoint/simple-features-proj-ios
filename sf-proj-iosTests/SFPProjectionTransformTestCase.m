@@ -7,9 +7,7 @@
 //
 
 #import "SFPGeometryTransformTestCase.h"
-#import "SFPolygon.h"
 #import "PROJProjectionConstants.h"
-#import "PROJProjection.h"
 #import "PROJProjectionFactory.h"
 #import "SFPGeometryTransform.h"
 #import "SFPTestUtils.h"
