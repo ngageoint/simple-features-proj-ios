@@ -52,6 +52,8 @@
 
     SFGeometry *transformed = [transform transformGeometry:geometry];
 
+    [transform destroy];
+
     return transformed;
 }
 

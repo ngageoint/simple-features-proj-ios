@@ -4,9 +4,10 @@ Adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
-## 5.1.4 (TBD)
+## [6.0.0](https://github.com/ngageoint/simple-features-proj-ios/releases/tag/6.0.0) (08-10-2023)
 
-* TBD
+* proj-ios version 2.0.0 (using PROJ C/C++ library)
+* **WARNING**: Transformations (SFPGeometryTransform) should now be destroyed for memory when no longer maintained
 
 ## [5.1.3](https://github.com/ngageoint/simple-features-proj-ios/releases/tag/5.1.3) (06-02-2023)
 

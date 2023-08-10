@@ -45,6 +45,8 @@ class SFPSwiftReadmeTest: XCTestCase{
         
         let transformed: SFGeometry = transform.transform(geometry)
 
+        transform.destroy()
+
         return transformed
     }
     

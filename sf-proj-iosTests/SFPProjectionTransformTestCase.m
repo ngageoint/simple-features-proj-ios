@@ -38,6 +38,8 @@
     SFPGeometryTransform *transformWebMercatorToWgs84 = [SFPGeometryTransform transformFromProjection:webMercator andToProjection:wgs84];
     
     SFGeometry *transformedGeometry = [transformWebMercatorToWgs84 transformGeometry:polygon];
+
+    [transformWebMercatorToWgs84 destroy];
     
     [SFPTestUtils assertNotNil:transformedGeometry];
     [SFPTestUtils assertTrue:[transformedGeometry isKindOfClass:[SFPolygon class]]];
@@ -48,6 +50,8 @@
 
     SFGeometry *transformedGeometry2 = [transformWgs84ToWebMercator transformGeometry:transformedGeometry];
     
+    [transformWgs84ToWebMercator destroy];
+
     [SFPTestUtils assertNotNil:transformedGeometry2];
     [SFPTestUtils assertTrue:[transformedGeometry2 isKindOfClass:[SFPolygon class]]];
     

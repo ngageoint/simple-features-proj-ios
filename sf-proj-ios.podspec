@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'sf-proj-ios'
-  s.version          = '5.1.4'
+  s.version          = '6.0.0'
   s.license          =  {:type => 'MIT', :file => 'LICENSE' }
   s.summary          = 'iOS SDK for Simple Features Projection'
   s.homepage         = 'https://github.com/ngageoint/simple-features-proj-ios'
@@ -17,5 +17,5 @@ Pod::Spec.new do |s|
   s.frameworks = 'Foundation'
 
   s.dependency 'sf-ios', '~> 4.1.2'
-  s.dependency 'proj-ios', '~> 1.0.5'
+  s.dependency 'proj-ios', '~> 2.0.0'
 end

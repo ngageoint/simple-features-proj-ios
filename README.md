@@ -36,6 +36,8 @@ SFPGeometryTransform *transform =
 
 SFGeometry *transformed = [transform transformGeometry:geometry];
 
+[transform destroy];
+
 ```
 
 ### Build ###
@@ -71,12 +73,12 @@ Include this repository by specifying it in a Podfile using a supported option.
 
 Pull from [CocoaPods](https://cocoapods.org/pods/sf-proj-ios):
 
-    pod 'sf-proj-ios', '~> 5.1.3'
+    pod 'sf-proj-ios', '~> 6.0.0'
 
 Pull from GitHub:
 
     pod 'sf-proj-ios', :git => 'https://github.com/ngageoint/simple-features-proj-ios.git', :branch => 'master'
-    pod 'sf-proj-ios', :git => 'https://github.com/ngageoint/simple-features-proj-ios.git', :tag => '5.1.3'
+    pod 'sf-proj-ios', :git => 'https://github.com/ngageoint/simple-features-proj-ios.git', :tag => '6.0.0'
 
 Include as local project:
 
@@ -100,6 +102,8 @@ let projection2: PROJProjection = PROJProjectionFactory.projection(withAuthority
 let transform: SFPGeometryTransform = SFPGeometryTransform(from: projection1, andTo: projection2)
 
 let transformed: SFGeometry = transform.transform(geometry)
+
+transform.destroy()
 
 ```
 
