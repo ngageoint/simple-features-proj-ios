@@ -6,7 +6,7 @@ Adheres to [Semantic Versioning](http://semver.org/).
 
 ## 6.0.1 (TBD)
 
-* TBD
+* proj-ios version 2.0.1
 
 ## [6.0.0](https://github.com/ngageoint/simple-features-proj-ios/releases/tag/6.0.0) (08-10-2023)
 
