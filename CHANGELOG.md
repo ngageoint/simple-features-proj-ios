@@ -4,9 +4,11 @@ Adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
-## 6.0.2 (TBD)
+## [6.0.2](https://github.com/ngageoint/simple-features-proj-ios/releases/tag/6.0.2) (11-13-2023)
 
-* TBD
+* Module definition
+* proj-ios version 2.0.2
+* sf-ios 4.1.3
 
 ## [6.0.1](https://github.com/ngageoint/simple-features-proj-ios/releases/tag/6.0.1) (08-17-2023)
 
