@@ -4,6 +4,10 @@ Adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
+## 6.0.3 (TBD)
+
+* TBD
+
 ## [6.0.2](https://github.com/ngageoint/simple-features-proj-ios/releases/tag/6.0.2) (11-13-2023)
 
 * Module definition
