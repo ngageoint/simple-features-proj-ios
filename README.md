@@ -46,7 +46,7 @@ SFGeometry *transformed = [transform transformGeometry:geometry];
 
 **IMPORTANT** -
 Be sure your Mac has the `autoconf`, `automake`, and `glibtoolize` utilities.  These are required to build
-the [proj4-ios](https://cocoapods.org/pods/proj4-ios) dependency.  Without them, `pod install` will fail.  The easiest way to get these is to [`brew install`](https://brew.sh/) them:
+the [PROJ](https://github.com/ngageoint/PROJ) dependency.  Without them, `pod install` will fail.  The easiest way to get these is to [`brew install`](https://brew.sh/) them:
 ```
 brew install automake
 brew install libtool
@@ -74,6 +74,11 @@ Include this repository by specifying it in a Podfile using a supported option.
 Pull from [CocoaPods](https://cocoapods.org/pods/sf-proj-ios):
 
     pod 'sf-proj-ios', '~> 6.0.2'
+
+If you use `use_modular_headers!` in your Podfile, disable modular headers for the [PROJ](https://github.com/ngageoint/PROJ) dependency:
+
+    pod 'sf-proj-ios', '~> 6.0.2'
+    pod 'PROJ', :modular_headers => false
 
 Pull from GitHub:
 
