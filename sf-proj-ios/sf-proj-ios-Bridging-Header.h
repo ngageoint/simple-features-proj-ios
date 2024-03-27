@@ -13,5 +13,6 @@
 #import "proj-ios-Bridging-Header.h"
 #import "sf_proj_ios.h"
 #import "SFPGeometryTransform.h"
+#import "SFPProjectionGeometryUtils.h"
 
 #endif /* sf_proj_ios_Bridging_Header_h */

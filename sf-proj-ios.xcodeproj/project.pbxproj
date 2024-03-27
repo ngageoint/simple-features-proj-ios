@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		041F18E124CB2291001311E4 /* SFPReadmeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 041F18E024CB2291001311E4 /* SFPReadmeTest.m */; };
 		041F18E424CB3762001311E4 /* SFPSwiftReadmeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F18E324CB3762001311E4 /* SFPSwiftReadmeTest.swift */; };
+		04228B3D2BB45E350084DFFD /* SFPProjectionGeometryUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 04228B3B2BB45E350084DFFD /* SFPProjectionGeometryUtils.h */; };
+		04228B3E2BB45E350084DFFD /* SFPProjectionGeometryUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 04228B3C2BB45E350084DFFD /* SFPProjectionGeometryUtils.m */; };
 		042FC6571B963FE500549A4B /* sf_proj_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042FC64B1B963FE500549A4B /* sf_proj_ios.framework */; };
 		042FC6AF1B96421E00549A4B /* (null) in Headers */ = {isa = PBXBuildFile; };
 		042FC6D31B96421E00549A4B /* sf-proj-ios-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 042FC69E1B96421E00549A4B /* sf-proj-ios-Prefix.pch */; };
@@ -38,6 +40,8 @@
 		041F18E024CB2291001311E4 /* SFPReadmeTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFPReadmeTest.m; sourceTree = "<group>"; };
 		041F18E224CB3762001311E4 /* sf-proj-iosTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "sf-proj-iosTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		041F18E324CB3762001311E4 /* SFPSwiftReadmeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFPSwiftReadmeTest.swift; sourceTree = "<group>"; };
+		04228B3B2BB45E350084DFFD /* SFPProjectionGeometryUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFPProjectionGeometryUtils.h; sourceTree = "<group>"; };
+		04228B3C2BB45E350084DFFD /* SFPProjectionGeometryUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFPProjectionGeometryUtils.m; sourceTree = "<group>"; };
 		042FC64B1B963FE500549A4B /* sf_proj_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = sf_proj_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		042FC64F1B963FE500549A4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		042FC6561B963FE500549A4B /* sf_proj_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sf_proj_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +112,8 @@
 				0493A59B2AE93913000B75E6 /* sf_proj_ios.swift */,
 				04F455FA209A47C600FC299E /* SFPGeometryTransform.h */,
 				04F45606209A47C700FC299E /* SFPGeometryTransform.m */,
+				04228B3B2BB45E350084DFFD /* SFPProjectionGeometryUtils.h */,
+				04228B3C2BB45E350084DFFD /* SFPProjectionGeometryUtils.m */,
 				042FC69E1B96421E00549A4B /* sf-proj-ios-Prefix.pch */,
 				042FC64E1B963FE500549A4B /* Supporting Files */,
 				0472B51A1C03590500496B87 /* sf-proj-ios-Bridging-Header.h */,
@@ -179,6 +185,7 @@
 				04F4560E209A47C800FC299E /* SFPGeometryTransform.h in Headers */,
 				042FC6D51B96453E00549A4B /* sf_proj_ios.h in Headers */,
 				042FC6D31B96421E00549A4B /* sf-proj-ios-Prefix.pch in Headers */,
+				04228B3D2BB45E350084DFFD /* SFPProjectionGeometryUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04228B3E2BB45E350084DFFD /* SFPProjectionGeometryUtils.m in Sources */,
 				04F4561A209A47C800FC299E /* SFPGeometryTransform.m in Sources */,
 				0493A59C2AE93913000B75E6 /* sf_proj_ios.swift in Sources */,
 			);
