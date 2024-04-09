@@ -73,17 +73,17 @@ Include this repository by specifying it in a Podfile using a supported option.
 
 Pull from [CocoaPods](https://cocoapods.org/pods/sf-proj-ios):
 
-    pod 'sf-proj-ios', '~> 6.0.2'
+    pod 'sf-proj-ios', '~> 6.0.3'
 
 If you use `use_modular_headers!` in your Podfile, disable modular headers for the [PROJ](https://github.com/ngageoint/PROJ) dependency:
 
-    pod 'sf-proj-ios', '~> 6.0.2'
+    pod 'sf-proj-ios', '~> 6.0.3'
     pod 'PROJ', :modular_headers => false
 
 Pull from GitHub:
 
     pod 'sf-proj-ios', :git => 'https://github.com/ngageoint/simple-features-proj-ios.git', :branch => 'master'
-    pod 'sf-proj-ios', :git => 'https://github.com/ngageoint/simple-features-proj-ios.git', :tag => '6.0.2'
+    pod 'sf-proj-ios', :git => 'https://github.com/ngageoint/simple-features-proj-ios.git', :tag => '6.0.3'
 
 Include as local project:
 
