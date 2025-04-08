@@ -1,5 +1,5 @@
 //
-//  sf-proj-ios.h
+//  SimpleFeaturesProjections.h
 //  sf-proj-ios
 //
 //  Created by Brian Osborn on 9/1/15.
@@ -9,5 +9,7 @@
 #ifndef sf_proj_ios_sf_proj_ios_h
 #define sf_proj_ios_sf_proj_ios_h
 
+#import <SimpleFeaturesProjections/SFPGeometryTransform.h>
+#import <SimpleFeaturesProjections/SFPProjectionGeometryUtils.h>
 
 #endif

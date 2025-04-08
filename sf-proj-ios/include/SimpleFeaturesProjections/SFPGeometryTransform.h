@@ -6,14 +6,8 @@
 //  Copyright © 2016 NGA. All rights reserved.
 //
 
-#import "PROJProjectionTransform.h"
-#import "SFMultiPoint.h"
-#import "SFMultiLineString.h"
-#import "SFMultiPolygon.h"
-#import "SFCircularString.h"
-#import "SFCompoundCurve.h"
-#import "SFTIN.h"
-#import "SFTriangle.h"
+#import <Projections/Projections.h>
+#import <SimpleFeatures/SimpleFeatures.h>
 
 /**
  * Geometry Projection Transform

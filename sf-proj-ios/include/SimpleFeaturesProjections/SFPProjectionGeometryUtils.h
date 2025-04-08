@@ -6,8 +6,8 @@
 //  Copyright © 2024 NGA. All rights reserved.
 //
 
-#import "PROJProjection.h"
-#import "SFPoint.h"
+#import <Projections/Projections.h>
+#import <SimpleFeatures/SimpleFeatures.h>
 
 /**
  * Projection Geometry Utilities

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 NGA. All rights reserved.
 //
 
-#import "SFPolygon.h"
+#import <SimpleFeatures/SimpleFeatures.h>
 
 @interface SFPTestUtils : NSObject
 

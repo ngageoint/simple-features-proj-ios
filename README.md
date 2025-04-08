@@ -42,58 +42,48 @@ SFGeometry *transformed = [transform transformGeometry:geometry];
 
 ### Build ###
 
-[![Build & Test](https://github.com/ngageoint/simple-features-proj-ios/workflows/Build%20&%20Test/badge.svg)](https://github.com/ngageoint/simple-features-proj-ios/actions/workflows/build-test.yml)
+[![Build](https://github.com/ngageoint/simple-features-proj-ios/workflows/Build/badge.svg)](https://github.com/ngageoint/simple-features-proj-ios/actions/workflows/build.yml)
 
-**IMPORTANT** -
-Be sure your Mac has the `autoconf`, `automake`, and `glibtoolize` utilities.  These are required to build
-the [PROJ](https://github.com/ngageoint/PROJ) dependency.  Without them, `pod install` will fail.  The easiest way to get these is to [`brew install`](https://brew.sh/) them:
-```
-brew install automake
-brew install libtool
-```
+Build this repository using Swift Package Manager:
 
-Build this repository using Xcode and/or CocoaPods:
-
-    pod repo update
-    pod install
-
-Open sf-proj-ios.xcworkspace in Xcode or build from command line:
-
-    xcodebuild -workspace 'sf-proj-ios.xcworkspace' -scheme sf-proj-ios build
+    swift build
 
 Run tests from Xcode or from command line:
 
-    xcodebuild test -workspace 'sf-proj-ios.xcworkspace' -scheme sf-proj-ios -destination 'platform=iOS Simulator,name=iPhone 15'
+    swift test
+
+Open the Swift Package in Xcode from command line:
+
+    open Package.swift
 
 ### Include Library ###
 
-See the [above note](https://github.com/ngageoint/simple-features-proj-ios#build) about `automake` and `glibtoolize`.
+Use this library via SPM in your Package.swift:
 
-Include this repository by specifying it in a Podfile using a supported option.
+    dependencies: [
+        .package(url: "https://github.com/ngageoint/simple-features-proj-ios.git", branch: "release/7.0.0"),
+    ]
+    
+Or as a tagged release:
 
-Pull from [CocoaPods](https://cocoapods.org/pods/sf-proj-ios):
+    dependencies: [
+        .package(url: "https://github.com/ngageoint/simple-features-proj-ios.git", from: "7.0.0"),
+    ]
 
-    pod 'sf-proj-ios', '~> 6.0.3'
+Reference it in your Package.swift target:
 
-If you use `use_modular_headers!` in your Podfile, disable modular headers for the [PROJ](https://github.com/ngageoint/PROJ) dependency:
-
-    pod 'sf-proj-ios', '~> 6.0.3'
-    pod 'PROJ', :modular_headers => false
-
-Pull from GitHub:
-
-    pod 'sf-proj-ios', :git => 'https://github.com/ngageoint/simple-features-proj-ios.git', :branch => 'master'
-    pod 'sf-proj-ios', :git => 'https://github.com/ngageoint/simple-features-proj-ios.git', :tag => '6.0.3'
-
-Include as local project:
-
-    pod 'sf-proj-ios', :path => '../simple-features-proj-ios'
+    .target(
+        name: "projections",
+        dependencies: [
+            .product(name: "SimpleFeaturesProjections", package: "simple-features-proj-ios"),
+        ],
+    ),
 
 ### Swift ###
 
-To use from Swift, import the sf-proj-ios bridging header from the Swift project's bridging header
+To use from Swift:
 
-    #import "sf-proj-ios-Bridging-Header.h"
+    import SimpleFeaturesProjections
 
 #### Transform ####
 

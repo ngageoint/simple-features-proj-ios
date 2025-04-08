@@ -6,11 +6,8 @@
 //  Copyright © 2024 NGA. All rights reserved.
 //
 
-#import "SFPProjectionGeometryUtils.h"
-#import "PROJProjectionFactory.h"
-#import "PROJProjectionConstants.h"
-#import "SFPGeometryTransform.h"
-#import "SFGeometryUtils.h"
+#import <SimpleFeaturesProjections/SFPProjectionGeometryUtils.h>
+#import <SimpleFeaturesProjections/SFPGeometryTransform.h>
 
 @implementation SFPProjectionGeometryUtils
 
