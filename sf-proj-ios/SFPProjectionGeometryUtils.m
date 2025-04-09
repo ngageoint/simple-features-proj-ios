@@ -10,7 +10,6 @@
 #import "PROJProjectionFactory.h"
 #import "PROJProjectionConstants.h"
 #import "SFPGeometryTransform.h"
-#import "SFGeometryUtils.h"
 
 @implementation SFPProjectionGeometryUtils
 

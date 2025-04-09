@@ -7,7 +7,7 @@
 //
 
 #import "PROJProjection.h"
-#import "SFPoint.h"
+@import sf_ios;
 
 /**
  * Projection Geometry Utilities

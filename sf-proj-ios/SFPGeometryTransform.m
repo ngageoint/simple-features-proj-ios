@@ -100,7 +100,7 @@
     
     SFGeometry *to = nil;
     
-    enum SFGeometryType geometryType = geometry.geometryType;
+    SFGeometryType geometryType = geometry.geometryType;
     switch(geometryType){
         case SF_POINT:
             to = [self transformPoint:(SFPoint *)geometry];
@@ -142,7 +142,7 @@
             to = [self transformGeometryCollection:(SFGeometryCollection *)geometry];
             break;
         default:
-            [NSException raise:@"Unsupported Geometry" format:@"Unsupported Geometry Type: %u", geometryType];
+            [NSException raise:@"Unsupported Geometry" format:@"Unsupported Geometry Type: %ld", geometryType];
     }
     
     return to;

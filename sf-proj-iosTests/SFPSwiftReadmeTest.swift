@@ -20,7 +20,7 @@ class SFPSwiftReadmeTest: XCTestCase{
         
         let transformed: SFGeometry = transformTester(SFPoint(xValue: 111319.49079327357, andYValue: 111325.14286638486))
         
-        SFPTestUtils.assertEqualInt(withValue: Int32(SF_POINT.rawValue), andValue2: Int32(transformed.geometryType.rawValue))
+        XCTAssertEqual(SFGeometryType.POINT, transformed.geometryType)
         let point: SFPoint = transformed as! SFPoint
         SFPTestUtils.assertEqualDouble(withValue: 1.0, andValue2: point.x.doubleValue, andDelta: 0.0000000000001)
         SFPTestUtils.assertEqualDouble(withValue: 1.0, andValue2: point.y.doubleValue, andDelta: 0.0000000000001)

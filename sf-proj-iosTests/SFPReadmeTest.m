@@ -6,6 +6,8 @@
 //  Copyright © 2020 NGA. All rights reserved.
 //
 
+@import sf_ios;
+
 #import "SFPReadmeTest.h"
 #import "SFPTestUtils.h"
 #import "SFPGeometryTransform.h"
@@ -21,7 +23,7 @@
     
     SFGeometry *transformed = [self transformTester: [SFPoint pointWithXValue:111319.49079327357 andYValue:111325.14286638486]];
     
-    [SFPTestUtils assertEqualIntWithValue:SF_POINT andValue2:transformed.geometryType];
+    XCTAssertEqual(SF_POINT, transformed.geometryType);
     SFPoint *point = (SFPoint *) transformed;
     [SFPTestUtils assertEqualDoubleWithValue:1.0 andValue2:[point.x doubleValue] andDelta:.0000000000001];
     [SFPTestUtils assertEqualDoubleWithValue:1.0 andValue2:[point.y doubleValue] andDelta:.0000000000001];
