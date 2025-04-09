@@ -21,4 +21,4 @@ jobs:
     - name: Install
       run: pod install
     - name: Build
-      run: xcodebuild build-for-testing -workspace sf-proj-ios.xcworkspace -scheme sf-proj-ios -destination 'platform=iOS Simulator,OS=latest,name=iPhone 14'
+      run: xcodebuild build-for-testing -workspace sf-proj-ios.xcworkspace -scheme sf-proj-ios -destination 'platform=iOS Simulator,OS=latest,name=iPhone 16'
