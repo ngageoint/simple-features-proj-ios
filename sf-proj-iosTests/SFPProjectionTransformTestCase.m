@@ -7,10 +7,8 @@
 //
 
 #import "SFPGeometryTransformTestCase.h"
-#import "PROJProjectionConstants.h"
-#import "PROJProjectionFactory.h"
-#import "SFPGeometryTransform.h"
-#import "SFPTestUtils.h"
+@import SimpleFeaturesProjections;
+@import TestUtils;
 
 @implementation SFPGeometryTransformTestCase
 

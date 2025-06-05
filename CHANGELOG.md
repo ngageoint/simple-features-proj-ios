@@ -4,9 +4,10 @@ Adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
-## 6.0.4 (TBD)
+## 7.0.0 (5-7-2025)
 
-* TBD
+* Swift Package Manager support
+* sf-ios 5.0.0 (Breaking change for NS_ENUM symbol exposure to Swift)
 
 ## [6.0.3](https://github.com/ngageoint/simple-features-proj-ios/releases/tag/6.0.3) (04-09-2024)
 

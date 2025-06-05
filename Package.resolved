@@ -1,0 +1,42 @@
+{
+  "originHash" : "14c1ce3010727411bd59c70c129d54379711536f906a009ecb67e95477cc69be",
+  "pins" : [
+    {
+      "identity" : "coordinate-reference-systems-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ngageoint/coordinate-reference-systems-ios.git",
+      "state" : {
+        "revision" : "d0d8cd34710aa78adb1bef3cdb2bf09a18356fa0",
+        "version" : "2.0.0"
+      }
+    },
+    {
+      "identity" : "proj",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ngageoint/PROJ.git",
+      "state" : {
+        "revision" : "336fced3634f438f81e0d435ad99658688d1cf71",
+        "version" : "9.4.2"
+      }
+    },
+    {
+      "identity" : "projections-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ngageoint/projections-ios",
+      "state" : {
+        "revision" : "f05c424664072bbc9bd177c62f82368b08414253",
+        "version" : "3.0.0"
+      }
+    },
+    {
+      "identity" : "simple-features-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ngageoint/simple-features-ios",
+      "state" : {
+        "revision" : "615127133c83122077dcf71daa53a9a93f05a347",
+        "version" : "5.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}
