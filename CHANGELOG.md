@@ -4,7 +4,7 @@ Adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
-## 7.0.0 (5-7-2025)
+## 7.0.0 (6-5-2025)
 
 * Swift Package Manager support
 * sf-ios 5.0.0 (Breaking change for NS_ENUM symbol exposure to Swift)
